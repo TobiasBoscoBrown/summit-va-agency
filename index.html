@@ -122,7 +122,7 @@ section{position:relative}
 /* services */
 .svc-sec{background:var(--cream-2)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:54px}
-.svc{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s,box-shadow .3s}
+.svc{display:block;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s,box-shadow .3s}
 .svc:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
 .svc .ic{width:46px;height:46px;border-radius:13px;background:linear-gradient(140deg,var(--plum),var(--violet));display:grid;place-items:center;margin-bottom:16px}
 .svc .ic svg{width:23px;height:23px;stroke:#fff;fill:none;stroke-width:1.7}
@@ -254,6 +254,23 @@ html.anim .reveal.in{opacity:1;transform:none}
 .mobile-menu a{color:#fff;font:600 22px/1 'Fraunces';padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .mobile-menu .btn{margin-top:20px;justify-content:center}
 .mclose{position:absolute;top:24px;right:24px;width:44px;height:44px;border:1px solid rgba(255,255,255,.2);background:none;border-radius:12px;color:#fff;font-size:22px;cursor:pointer}
+
+/* nav over dark hero */
+header:not(.scrolled) .brand b{color:#fff}
+header:not(.scrolled) .brand span{color:var(--lav)}
+header:not(.scrolled) .menu a{color:#EADFF7}
+header:not(.scrolled) .menu a:hover{color:#fff}
+header:not(.scrolled) .btn-ghost{color:#fff;border-color:rgba(255,255,255,.34)}
+header:not(.scrolled) .btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.08)}
+header:not(.scrolled) .burger{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
+header:not(.scrolled) .burger svg{stroke:#fff}
+/* infinite marquee carousel */
+.marquee{margin-top:48px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.marquee-track{display:flex;gap:20px;width:max-content;animation:marq 46s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee .card{flex:0 0 340px}
+@media(max-width:560px){.marquee .card{flex:0 0 80vw}}
 </style>
 </head>
 <body>
@@ -281,7 +298,7 @@ html.anim .reveal.in{opacity:1;transform:none}
     </a>
     <nav class="menu">
       <a href="#approach">How it works</a>
-      <a href="#services">Services</a>
+      <a href="services.html">Services</a>
       <a href="#who">Who we help</a>
       <a href="#founder">Founder</a>
       <a href="#faq">FAQs</a>
@@ -299,7 +316,7 @@ html.anim .reveal.in{opacity:1;transform:none}
 <div class="mobile-menu" id="mm">
   <button class="mclose" onclick="document.getElementById('mm').classList.remove('open')">&times;</button>
   <a href="#approach" onclick="closeMM()">How it works</a>
-  <a href="#services" onclick="closeMM()">Services</a>
+  <a href="services.html" onclick="closeMM()">Services</a>
   <a href="#who" onclick="closeMM()">Who we help</a>
   <a href="#founder" onclick="closeMM()">Founder</a>
   <a href="#faq" onclick="closeMM()">FAQs</a>
@@ -418,18 +435,18 @@ html.anim .reveal.in{opacity:1;transform:none}
       <p>Pick the pieces that are eating your week, or hand over the whole operation. Everything is delivered remotely and documented as we go.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div><h3>Operations &amp; Systems</h3><p>OBM-level structure for the way your business actually runs day to day.</p></div>
-      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></div><h3>Inbox &amp; Calendar</h3><p>Triaged email, protected focus time, and a calendar you can trust.</p></div>
-      <div class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Customer Service &amp; CRM</h3><p>Fast, on-brand replies and a CRM that stays clean and current.</p></div>
-      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><h3>Financial Tracking &amp; Invoicing</h3><p>Invoices sent, payments chased, and numbers you can read at a glance.</p></div>
-      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Project &amp; Team Management</h3><p>Boards, deadlines and hand-offs that keep everyone moving and shipping.</p></div>
-      <div class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div><h3>SOPs &amp; Process Docs</h3><p>Your business out of your head and into clear, repeatable playbooks.</p></div>
-      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Lead Generation</h3><p>Targeted prospect lists, clean and verified, ready to convert.</p></div>
-      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><h3>LinkedIn Prospecting</h3><p>Decision-maker databases pulled by title, company and location.</p></div>
-      <div class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div><h3>Sales Pipeline Tracking</h3><p>Stage-by-stage pipelines with forecasts, so nothing falls through.</p></div>
-      <div class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 17.5z"/></svg></div><h3>Social Media Management</h3><p>Scheduling, replies and coordination that keep your presence consistent.</p></div>
-      <div class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Marketing Coordination</h3><p>The moving parts of a launch, organized and shipped on schedule.</p></div>
-      <div class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div><h3>Everything in between</h3><p>If it is repetitive and remote, we can take it off your plate. Just ask.</p></div>
+      <a href="operations-systems.html" class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div><h3>Operations &amp; Systems</h3><p>OBM-level structure for the way your business actually runs day to day.</p></a>
+      <a href="inbox-calendar.html" class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></div><h3>Inbox &amp; Calendar</h3><p>Triaged email, protected focus time, and a calendar you can trust.</p></a>
+      <a href="customer-service-crm.html" class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Customer Service &amp; CRM</h3><p>Fast, on-brand replies and a CRM that stays clean and current.</p></a>
+      <a href="financial-tracking.html" class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><h3>Financial Tracking &amp; Invoicing</h3><p>Invoices sent, payments chased, and numbers you can read at a glance.</p></a>
+      <a href="project-team-management.html" class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Project &amp; Team Management</h3><p>Boards, deadlines and hand-offs that keep everyone moving and shipping.</p></a>
+      <a href="sops-process-docs.html" class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div><h3>SOPs &amp; Process Docs</h3><p>Your business out of your head and into clear, repeatable playbooks.</p></a>
+      <a href="lead-generation.html" class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Lead Generation</h3><p>Targeted prospect lists, clean and verified, ready to convert.</p></a>
+      <a href="linkedin-prospecting.html" class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><h3>LinkedIn Prospecting</h3><p>Decision-maker databases pulled by title, company and location.</p></a>
+      <a href="sales-pipeline.html" class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div><h3>Sales Pipeline Tracking</h3><p>Stage-by-stage pipelines with forecasts, so nothing falls through.</p></a>
+      <a href="social-media-management.html" class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 17.5z"/></svg></div><h3>Social Media Management</h3><p>Scheduling, replies and coordination that keep your presence consistent.</p></a>
+      <a href="marketing-coordination.html" class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Marketing Coordination</h3><p>The moving parts of a launch, organized and shipped on schedule.</p></a>
+      <a href="services.html" class="svc reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div><h3>Everything in between</h3><p>If it is repetitive and remote, we can take it off your plate. Just ask.</p></a>
     </div>
   </div>
 </section>
@@ -451,7 +468,7 @@ html.anim .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<!-- RESULTS CAROUSEL -->
+<!-- RESULTS / REAL WORK -->
 <section class="pad car-sec">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -463,16 +480,9 @@ html.anim .reveal.in{opacity:1;transform:none}
       <figure class="sample reveal d1"><span class="tagline">Real sample</span><img src="img/sample-leadgen.jpg" alt="Summit VA lead generation deliverable: a targeted, verified prospect list" loading="lazy"></figure>
       <figure class="sample reveal d2"><span class="tagline">Real sample</span><img src="img/sample-linkedin.jpg" alt="Summit VA LinkedIn prospecting deliverable: a decision-maker database" loading="lazy"></figure>
     </div>
-    <p class="samples-note reveal d2">Actual work, straight from our desk. Swipe the cards below for more of what we handle.</p>
-    <div class="carousel reveal d1">
-      <button class="car-btn prev" aria-label="Previous">&#8249;</button>
-      <div class="car-track" id="track">
-        <div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" alt="Sales pipeline tracker" loading="lazy"></div><div class="bd"><div class="k">01 / Sales Pipeline</div><h3>Quarter-by-quarter tracker</h3><p>Deal-stage tracking, win probability and forecast, with auto-calculated totals.</p></div></div>
-        <div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=900&q=80" alt="Process board with task notes" loading="lazy"></div><div class="bd"><div class="k">02 / Systems</div><h3>SOP &amp; process library</h3><p>Every workflow documented as a clear, repeatable playbook your whole team can follow.</p></div></div>
-        <div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=900&q=80" alt="Inbox management at a laptop" loading="lazy"></div><div class="bd"><div class="k">03 / EA Support</div><h3>Inbox &amp; calendar control</h3><p>Triaged email, protected focus blocks and a schedule that finally reflects your priorities.</p></div></div>
-        <div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80" alt="Team coordination meeting" loading="lazy"></div><div class="bd"><div class="k">04 / Coordination</div><h3>Project &amp; team boards</h3><p>Clear owners, deadlines and hand-offs so the work keeps moving without you chasing it.</p></div></div>
-      </div>
-      <button class="car-btn next" aria-label="Next">&#8250;</button>
+    <p class="samples-note reveal d2">Actual work, straight from our desk. The capabilities below run on a loop, just like our support.</p>
+    <div class="marquee reveal d1" aria-hidden="false">
+      <div class="marquee-track"><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=820&q=80" alt="Pipeline tracking" loading="lazy"></div><div class="bd"><div class="k">Sales pipeline</div><h3>Pipeline tracking</h3><p>Stage-by-stage deal tracking, win probability and forecast, with auto-calculated totals.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=820&q=80" alt="Systems that run themselves" loading="lazy"></div><div class="bd"><div class="k">Operations</div><h3>Systems that run themselves</h3><p>OBM-level structure for the way your business actually works, day to day.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=820&q=80" alt="Inbox &amp; calendar control" loading="lazy"></div><div class="bd"><div class="k">EA support</div><h3>Inbox &amp; calendar control</h3><p>Triaged email, protected focus blocks and a schedule that reflects your priorities.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=820&q=80" alt="Customer service &amp; CRM" loading="lazy"></div><div class="bd"><div class="k">CRM</div><h3>Customer service &amp; CRM</h3><p>Fast, on-brand replies and a CRM that stays clean, current and useful.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=820&q=80" alt="SOP &amp; process library" loading="lazy"></div><div class="bd"><div class="k">Documentation</div><h3>SOP &amp; process library</h3><p>Every workflow written down as a clear, repeatable playbook your team can follow.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=820&q=80" alt="Project &amp; team boards" loading="lazy"></div><div class="bd"><div class="k">Coordination</div><h3>Project &amp; team boards</h3><p>Clear owners, deadlines and hand-offs so the work keeps moving without you chasing it.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=820&q=80" alt="Pipeline tracking" loading="lazy"></div><div class="bd"><div class="k">Sales pipeline</div><h3>Pipeline tracking</h3><p>Stage-by-stage deal tracking, win probability and forecast, with auto-calculated totals.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=820&q=80" alt="Systems that run themselves" loading="lazy"></div><div class="bd"><div class="k">Operations</div><h3>Systems that run themselves</h3><p>OBM-level structure for the way your business actually works, day to day.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=820&q=80" alt="Inbox &amp; calendar control" loading="lazy"></div><div class="bd"><div class="k">EA support</div><h3>Inbox &amp; calendar control</h3><p>Triaged email, protected focus blocks and a schedule that reflects your priorities.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=820&q=80" alt="Customer service &amp; CRM" loading="lazy"></div><div class="bd"><div class="k">CRM</div><h3>Customer service &amp; CRM</h3><p>Fast, on-brand replies and a CRM that stays clean, current and useful.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=820&q=80" alt="SOP &amp; process library" loading="lazy"></div><div class="bd"><div class="k">Documentation</div><h3>SOP &amp; process library</h3><p>Every workflow written down as a clear, repeatable playbook your team can follow.</p></div></div><div class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=820&q=80" alt="Project &amp; team boards" loading="lazy"></div><div class="bd"><div class="k">Coordination</div><h3>Project &amp; team boards</h3><p>Clear owners, deadlines and hand-offs so the work keeps moving without you chasing it.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -550,7 +560,7 @@ html.anim .reveal.in{opacity:1;transform:none}
       <div class="foot-col">
         <h4>Explore</h4>
         <a href="#approach">How it works</a>
-        <a href="#services">Services</a>
+        <a href="services.html">Services</a>
         <a href="#who">Who we help</a>
         <a href="#founder">Founder</a>
         <a href="#faq">FAQs</a>

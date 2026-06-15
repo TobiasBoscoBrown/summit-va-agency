@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LinkedIn Prospecting | Summit VA Agency</title><meta name="description" content="We pull decision-maker databases straight from LinkedIn, filtered by title, company and location, organized so your team can act immediately."/><meta name="theme-color" content="#1E0F2E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--plum:#2C1840;--plum-deep:#1B0E2B;--violet:#7C3AED;--lav:#CBB7F2;--gold:#C9A24B;--gold-soft:#E4C77E;--cream:#F6F1E8;--cream-2:#FBF8F2;--paper:#fff;--ink:#1C1326;--ink-2:#5A5066;--line:#E7DECF;--shadow:0 24px 60px -28px rgba(28,12,46,.45);--shadow-sm:0 10px 30px -18px rgba(28,12,46,.40);--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+.eyebrow{font:600 12.5px/1 'Inter';letter-spacing:.22em;text-transform:uppercase;color:var(--violet)}
+.eyebrow.on-dark{color:var(--lav)}
+.btn{display:inline-flex;align-items:center;gap:.55em;font:600 15px/1 'Inter';padding:15px 26px;border-radius:100px;border:1px solid transparent;cursor:pointer;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s;white-space:nowrap}
+.btn-primary{background:var(--violet);color:#fff;box-shadow:0 14px 30px -12px rgba(124,58,237,.7)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 40px -14px rgba(124,58,237,.8)}
+.btn-light{background:#fff;color:var(--plum)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:0 18px 36px -16px rgba(0,0,0,.4)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.32)}
+.btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--violet);color:var(--violet);transform:translateY(-2px)}
+.arw{transition:transform .25s}.btn:hover .arw{transform:translateX(3px)}
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .35s,box-shadow .35s,padding .35s;padding:18px 0}
+header.scrolled{background:rgba(246,241,232,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(28,12,46,.07);padding:12px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand b{font:600 18px/1 'Fraunces';color:var(--ink)}
+.brand span{display:block;font:600 9.5px/1 'Inter';letter-spacing:.28em;color:var(--ink-2);margin-top:4px;text-transform:uppercase}
+.menu{display:flex;gap:30px;align-items:center}
+.menu a{font:500 14.5px/1 'Inter';color:var(--ink-2);transition:color .2s}
+.menu a:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+header:not(.scrolled) .brand b{color:#fff}
+header:not(.scrolled) .brand span{color:var(--lav)}
+header:not(.scrolled) .menu a{color:#EADFF7}
+header:not(.scrolled) .menu a:hover{color:#fff}
+header:not(.scrolled) .btn-ghost{color:#fff;border-color:rgba(255,255,255,.34)}
+@media(max-width:880px){.menu{display:none}.nav-cta .btn-ghost{display:none}}
+.shero{position:relative;background:radial-gradient(120% 120% at 82% -10%,#3A2253,var(--plum) 45%,var(--plum-deep));color:#fff;padding:150px 0 92px;overflow:hidden}
+.shero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;opacity:.5;mask-image:radial-gradient(80% 70% at 70% 20%,#000,transparent)}
+.shero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
+.crumb{font:500 13px/1 'Inter';color:var(--lav);margin-bottom:18px}
+.crumb a{color:var(--lav)}.crumb a:hover{color:#fff}
+.shero h1{font-size:clamp(36px,5vw,60px);color:#fff;margin-top:6px}
+.shero h1 em{font-style:italic;color:var(--gold-soft);font-weight:500}
+.shero p{color:#E6DCF2;font-size:clamp(16px,1.4vw,19px);margin-top:20px;max-width:32em}
+.shero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.shero-photo{border-radius:24px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.12);aspect-ratio:1/1;background:#241338}
+.shero-photo img{width:100%;height:100%;object-fit:cover}
+.pad{padding:90px 0}
+.sec-head{max-width:42em}
+.sec-head h2{font-size:clamp(28px,3.4vw,42px);margin-top:14px}
+.sec-head h2 em{font-style:italic;color:var(--violet);font-weight:500}
+.sec-head p{color:var(--ink-2);font-size:17px;margin-top:14px;max-width:38em}
+.inc{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:42px}
+.inc .item{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;display:flex;gap:14px;align-items:flex-start;transition:transform .3s,box-shadow .3s}
+.inc .item:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+.inc .ic{flex:none;width:30px;height:30px;border-radius:9px;background:#efe7fb;display:grid;place-items:center;margin-top:2px}
+.inc .ic svg{width:16px;height:16px;stroke:var(--violet);fill:none;stroke-width:2.2}
+.inc h3{font-size:16.5px;margin-bottom:3px}
+.inc p{font-size:14px;color:var(--ink-2)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.step{position:relative;padding-top:28px}
+.step .n{font:600 15px/1 'Inter';color:#fff;background:var(--violet);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;position:absolute;top:-4px;left:0}
+.step h3{font-size:18px;margin:24px 0 7px}
+.step p{font-size:14px;color:var(--ink-2)}
+.altband{background:var(--cream-2)}
+.ctaband{position:relative;background:var(--plum-deep);color:#fff;text-align:center;padding:96px 0;overflow:hidden}
+.ctaband h2{font-size:clamp(30px,4vw,48px)}
+.ctaband h2 em{font-style:italic;color:var(--gold-soft);font-weight:500}
+.ctaband p{color:#D9CCEC;font-size:17px;margin:16px auto 26px;max-width:32em}
+.ctaband .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.related{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.related a{font:600 13px/1 'Inter';color:var(--plum);background:#fff;border:1px solid var(--line);padding:11px 16px;border-radius:100px;transition:transform .2s,border-color .2s,color .2s}
+.related a:hover{transform:translateY(-2px);border-color:var(--violet);color:var(--violet)}
+footer{background:var(--plum-deep);color:#B9A8D4;padding:60px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-brand b{font:600 19px/1 'Fraunces';color:#fff}
+.foot-brand p{margin-top:13px;font-size:14px;max-width:26em;color:#A998C6}
+.foot-col h4{font:600 12px/1 'Inter';letter-spacing:.16em;text-transform:uppercase;color:var(--lav);margin-bottom:15px}
+.foot-col a{display:block;font-size:14.5px;color:#C3B4DE;margin-bottom:10px}
+.foot-col a:hover{color:#fff}
+.foot-bot{border-top:1px solid rgba(255,255,255,.08);margin-top:42px;padding-top:22px;font-size:13px;color:#8E7EAE;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.svc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.svc-card{display:block;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#e4d4b9}
+.svc-card .ic{width:46px;height:46px;border-radius:13px;background:linear-gradient(140deg,var(--plum),var(--violet));display:grid;place-items:center;margin-bottom:16px}
+.svc-card .ic svg{width:23px;height:23px;stroke:#fff;fill:none;stroke-width:1.7}
+.svc-card h3{font-size:18.5px;margin-bottom:7px}
+.svc-card p{font-size:14px;color:var(--ink-2)}
+.svc-card .go{margin-top:14px;font:600 13px/1 'Inter';color:var(--violet);display:inline-flex;gap:6px;align-items:center}
+.reveal{transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+html.anim .reveal{opacity:0;transform:translateY(30px)}
+html.anim .reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+@media(max-width:880px){.shero-grid{grid-template-columns:1fr;gap:40px}.inc,.steps,.svc-list,.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.inc,.steps,.svc-list,.foot-grid{grid-template-columns:1fr}}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="svaGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4C77E"/><stop offset="1" stop-color="#C9A24B"/></linearGradient>
+<g id="sva-mark"><circle cx="50" cy="50" r="48" fill="#2C1840"/><circle cx="50" cy="50" r="48" fill="none" stroke="url(#svaGold)" stroke-width="2.5"/><text x="50" y="52" text-anchor="middle" font-family="Fraunces,serif" font-weight="600" font-size="29" fill="#F6F1E8" letter-spacing="1">SVA</text><text x="50" y="69" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="6.4" letter-spacing="2.4" fill="#C9A24B">SUMMIT VA AGENCY</text></g></defs></svg><header id="hdr"><div class="wrap nav">
+<a class="brand" href="index.html"><svg class="mark" viewBox="0 0 100 100"><use href="#sva-mark"/></svg><span><b>Summit VA</b><span>Operations Support Agency</span></span></a>
+<nav class="menu"><a href="index.html#approach">How it works</a><a href="services.html">Services</a><a href="index.html#who">Who we help</a><a href="index.html#founder">Founder</a><a href="index.html#faq">FAQs</a></nav>
+<div class="nav-cta"><a class="btn btn-ghost" href="https://form.jotform.com/261101958492055" target="_blank" rel="noopener">2-min qualifier</a><a class="btn btn-primary" href="https://calendly.com/summitvaofficial/strategy-discovery-call-summit-va-agency" target="_blank" rel="noopener">Book a call <span class="arw">&rarr;</span></a></div>
+</div></header>
+<section class="shero"><div class="wrap shero-grid">
+<div class="reveal"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="services.html">Services</a> &nbsp;/&nbsp; LinkedIn Prospecting</div>
+<div class="eyebrow on-dark">Decision-makers</div>
+<h1>Decision-maker databases, <em>sorted and export-ready.</em></h1>
+<p>We pull decision-maker databases straight from LinkedIn, filtered by title, company and location, organized so your team can act immediately.</p>
+<div class="cta"><a class="btn btn-light" href="https://calendly.com/summitvaofficial/strategy-discovery-call-summit-va-agency" target="_blank" rel="noopener">Book your strategy call <span class="arw">&rarr;</span></a><a class="btn btn-outline-light" href="https://form.jotform.com/261101958492055" target="_blank" rel="noopener">2-minute qualifier</a></div></div>
+<div class="reveal d2"><div class="shero-photo"><img src="img/sample-linkedin.jpg" alt="LinkedIn Prospecting" loading="lazy"></div></div>
+</div></section>
+
+<section class="pad"><div class="wrap"><div class="sec-head reveal"><div class="eyebrow">What is included</div><h2>What we <em>take off your plate.</em></h2><p>Everything is delivered remotely and documented as we go, so the value compounds over time.</p></div>
+<div class="inc"><div class="item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Title and role targeting</h3><p>Reach the people who actually decide.</p></div></div><div class="item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Company filtering</h3><p>Focus on the accounts that fit.</p></div></div><div class="item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Location filtering</h3><p>Down to the markets you serve.</p></div></div><div class="item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Organized databases</h3><p>Clean, structured and easy to scan.</p></div></div><div class="item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Export-ready</h3><p>Drop straight into your CRM or sequence.</p></div></div><div class="item reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Repeatable</h3><p>Refreshed as your targeting evolves.</p></div></div></div></div></section>
+
+<section class="pad altband"><div class="wrap"><div class="sec-head reveal"><div class="eyebrow">How we deliver it</div><h2>A calm, deliberate <em>handover.</em></h2></div>
+<div class="steps"><div class="step reveal d1"><div class="n">1</div><h3>Strategy call</h3><p>We map where this is costing you time and what good looks like for your business.</p></div>
+<div class="step reveal d2"><div class="n">2</div><h3>Set up and document</h3><p>We build the system, take on the work and write it down as we go.</p></div>
+<div class="step reveal d3"><div class="n">3</div><h3>Run and refine</h3><p>We keep it running cleanly each week and tune it as you grow.</p></div></div>
+<div class="sec-head reveal" style="margin-top:54px"><div class="eyebrow">Who it is for</div><h2 style="font-size:clamp(22px,2.4vw,30px)">B2B teams and consultants who sell to specific roles and want warm, relevant lists.</h2></div>
+<div class="related"><a href="operations-systems.html">Operations & Systems</a><a href="inbox-calendar.html">Inbox & Calendar Management</a><a href="customer-service-crm.html">Customer Service & CRM</a><a href="financial-tracking.html">Financial Tracking & Invoicing</a><a href="project-team-management.html">Project & Team Management</a><a href="sops-process-docs.html">SOPs & Process Documentation</a></div></div></section>
+
+<section class="ctaband"><div class="wrap"><h2>Ready to hand <em>linkedin prospecting</em> off?</h2><p>Book a free strategy discovery call and we will map exactly how this fits your business.</p><div class="cta"><a class="btn btn-light" href="https://calendly.com/summitvaofficial/strategy-discovery-call-summit-va-agency" target="_blank" rel="noopener">Book your strategy call <span class="arw">&rarr;</span></a><a class="btn btn-outline-light" href="services.html">See all services</a></div></div></section>
+<footer><div class="wrap"><div class="foot-grid">
+<div class="foot-brand"><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 100 100" style="width:46px;height:46px"><use href="#sva-mark"/></svg><b>Summit VA Agency</b></a><p>We eliminate ops chaos for growing businesses. Your dedicated back-office operations partner, turning chaos into organized, scalable systems through reliable virtual support.</p></div>
+<div class="foot-col"><h4>Explore</h4><a href="index.html#approach">How it works</a><a href="services.html">Services</a><a href="index.html#who">Who we help</a><a href="index.html#founder">Founder</a><a href="index.html#faq">FAQs</a></div>
+<div class="foot-col"><h4>Get started</h4><a href="https://calendly.com/summitvaofficial/strategy-discovery-call-summit-va-agency" target="_blank" rel="noopener">Book a strategy call</a><a href="https://form.jotform.com/261101958492055" target="_blank" rel="noopener">Discovery qualifier</a><a href="https://www.instagram.com/summit_va/" target="_blank" rel="noopener">Instagram</a><a href="https://www.threads.com/@summit_va" target="_blank" rel="noopener">Threads</a></div>
+</div><div class="foot-bot"><span>&copy; 2026 Summit VA Agency. All rights reserved.</span><span>Admin &middot; Systems &middot; EA Support &middot; Fully remote</span></div></div></footer>
+<script>document.documentElement.classList.add('anim');var hdr=document.getElementById('hdr');function os(){hdr.classList.toggle('scrolled',window.scrollY>30);}os();addEventListener('scroll',os,{passive:true});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -7% 0px'});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});</script>
+</body></html>
+</body></html>
