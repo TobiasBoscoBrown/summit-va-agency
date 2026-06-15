@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://summit-va-agency.vercel.app/sitemap.xml
