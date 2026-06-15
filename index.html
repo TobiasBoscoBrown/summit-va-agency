@@ -588,6 +588,7 @@ onScroll();addEventListener('scroll',onScroll,{passive:true});
 function closeMM(){document.getElementById('mm').classList.remove('open');}
 const io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+requestAnimationFrame(function(){document.querySelectorAll('.reveal').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight*0.95){el.classList.add('in');}});});
 (function(){
   var t=document.getElementById('track');if(!t)return;
   var orig=[].slice.call(t.children),n=orig.length;
